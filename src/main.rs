@@ -97,7 +97,7 @@ fn seatch_select_view_by_locales(list: Vec<(String, String, String)>) -> Dialog 
                     .with_name("matches")
                     .scrollable(),
             )
-            .fixed_height(10),
+            .fixed_height(20),
         "Select Your locale".to_string(),
         None,
     )
