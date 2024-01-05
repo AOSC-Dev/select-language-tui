@@ -30,7 +30,7 @@ fn get_language_list() -> Result<Vec<(String, String, String)>> {
         .map(|x| (x.0.to_string(), x.1.to_string(), x.2.to_string()))
         .collect::<Vec<_>>();
 
-    lang.sort_unstable();
+    lang.sort_unstable_by(|a, b| a.0.cmp(&b.0));
     for i in ["English", "Chinese (Traditional)", "Chinese (Simplified)"] {
         let pos = lang.iter().position(|x| x.2 == i).unwrap();
         let entry = lang.remove(pos);
@@ -88,7 +88,7 @@ fn seatch_select_view_by_locales(list: Vec<(String, String, String)>) -> Dialog 
                             .unwrap();
 
                         match set_locale(&item) {
-                            Ok(()) => (),
+                            Ok(()) => s.quit(),
                             Err(e) => {
                                 show_msg(s, &e.to_string());
                             }
