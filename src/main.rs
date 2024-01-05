@@ -88,7 +88,7 @@ fn seatch_select_view_by_locales(list: Vec<(String, String, String)>) -> Dialog 
                             .unwrap();
 
                         match set_locale(&item) {
-                            Ok(()) => return,
+                            Ok(()) => (),
                             Err(e) => {
                                 show_msg(s, &e.to_string());
                             }
@@ -98,7 +98,7 @@ fn seatch_select_view_by_locales(list: Vec<(String, String, String)>) -> Dialog 
                     .scrollable(),
             )
             .fixed_height(10),
-        format!("Select Your locale"),
+        "Select Your locale".to_string(),
         None,
     )
 }
