@@ -69,7 +69,7 @@ fn seatch_select_view_by_locales(list: Vec<(String, String, String)>) -> Dialog 
 
     wrap_in_dialog(
         LinearLayout::vertical()
-            .child(TextView::new("Search locale"))
+            .child(TextView::new("Search available languages..."))
             .child(
                 EditView::new()
                     // update results every time the query changes
@@ -98,7 +98,7 @@ fn seatch_select_view_by_locales(list: Vec<(String, String, String)>) -> Dialog 
                     .scrollable(),
             )
             .fixed_height(20),
-        "Select Your locale".to_string(),
+        "Select Language".to_string(),
         None,
     )
 }
