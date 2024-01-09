@@ -31,7 +31,7 @@ fn get_language_list() -> Result<Vec<(String, String, String)>> {
         .collect::<Vec<_>>();
 
     lang.sort_unstable_by(|a, b| a.0.cmp(&b.0));
-    for i in ["English", "Chinese (Traditional)", "Chinese (Simplified)"] {
+    for i in ["Chinese (Simplified)", "Chinese (Traditional)", "English (United States)", "English (United Kingdom)"] {
         let pos = lang.iter().position(|x| x.2 == i).unwrap();
         let entry = lang.remove(pos);
         lang.insert(0, entry);
