@@ -33,7 +33,7 @@ fn hr(input: &[u8]) -> IResult<&[u8], ()> {
 }
 
 #[inline]
-fn languagelist_single_line(input: &[u8]) -> IResult<&[u8], Language> {
+fn languagelist_single_line(input: &[u8]) -> IResult<&[u8], Language<'_>> {
     let (input, (_, _, language_english, _, language, _, _, _, _, _, locale, _, _, _)) =
         tuple((
             take_until(";"),
