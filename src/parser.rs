@@ -1,13 +1,13 @@
 use std::str::Utf8Error;
 
 use nom::{
+    IResult,
     branch::alt,
     bytes::complete::{tag, take_until},
     character::complete::multispace1,
     combinator::{map, map_res},
     multi::many0,
     sequence::{preceded, terminated, tuple},
-    IResult,
 };
 
 type Language<'a> = (&'a [u8], &'a [u8], &'a [u8]);

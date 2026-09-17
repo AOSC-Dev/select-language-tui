@@ -1,11 +1,11 @@
 use std::{fs::File, io::Write};
 
 use cursive::{
+    Cursive, View,
     view::{Nameable, Resizable, Scrollable, SizeConstraint},
     views::{
         Dialog, DummyView, EditView, LinearLayout, ResizedView, ScrollView, SelectView, TextView,
     },
-    Cursive, View,
 };
 use eyre::Result;
 use parser::parse_languagelist;
